@@ -33,12 +33,12 @@ import { routes } from '@/router/index';
 }
 
 .link {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: beige;
-    height: 50px;
+    padding: 10px;
 }
 
 // 这个样式vue3会给我们自动加上
