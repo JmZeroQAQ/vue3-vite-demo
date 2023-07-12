@@ -1,6 +1,7 @@
 <template>
-  <!-- 路由出口 -->
-  <router-view></router-view>
+    <div>
+        <h1>Other</h1>
+    </div>
 </template>
 
 <script setup>
