@@ -136,6 +136,18 @@ export const routes = [
       },
     ],
   },
+  {
+    path: "/v-model/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/v-model/VModelView.vue"),
+      },
+    ],
+  },
 ];
 
 // 路由实例
