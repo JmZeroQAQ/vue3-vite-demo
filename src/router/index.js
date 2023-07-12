@@ -45,7 +45,7 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: "", // 在这里会被拼接成 /404
+        path: "",
         // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
         // 又叫路由懒加载
         component: () => import("@/views/ref/RefView.vue"),
@@ -57,7 +57,7 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: "", // 在这里会被拼接成 /404
+        path: "",
         // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
         // 又叫路由懒加载
         component: () => import("@/views/reactive/ReactiveView.vue"),
@@ -69,7 +69,7 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: "", // 在这里会被拼接成 /404
+        path: "",
         // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
         // 又叫路由懒加载
         component: () => import("@/views/toref-torefs/ToRef-ToRefsView.vue"),
@@ -81,7 +81,7 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: "", // 在这里会被拼接成 /404
+        path: "",
         // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
         // 又叫路由懒加载
         component: () => import("@/views/customRef/CustomRefView.vue"),
@@ -93,10 +93,46 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: "", // 在这里会被拼接成 /404
+        path: "",
         // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
         // 又叫路由懒加载
         component: () => import("@/views/computed/ComputedView.vue"),
+      },
+    ],
+  },
+  {
+    path: "/watch/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/watch/WatchView.vue"),
+      },
+    ],
+  },
+  {
+    path: "/watchEffect/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/watchEffect/WatchEffectView.vue"),
+      },
+    ],
+  },
+  {
+    path: "/props/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/props/PropsView.vue"),
       },
     ],
   },
