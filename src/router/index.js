@@ -184,6 +184,18 @@ export const routes = [
       },
     ],
   },
+  {
+    path: "/useHooks/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/useHooks/useHooksView.vue"),
+      },
+    ],
+  },
 ];
 
 // 路由实例
