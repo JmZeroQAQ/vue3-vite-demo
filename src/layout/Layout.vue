@@ -4,8 +4,16 @@
             <router-link class="link" v-for="item in routes.filter(item => item.path !== '/' )" :to="item.path" :key="item.path">{{ item.path }}</router-link>
         </div>
         <div class="content">
-            <!-- 路由出口 -->
-            <router-view></router-view>
+            <!-- 路由出口
+                Component为对应路由出口对应的组件
+                这样的话就可以缓存所有页面
+            -->
+            <router-view v-slot="{Component}">
+                <keep-alive :include="`KeepAliveView`">
+                    <component :is="Component" />
+                </keep-alive>
+
+            </router-view>
         </div>
     </div>
 </template>
