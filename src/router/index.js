@@ -160,6 +160,30 @@ export const routes = [
       },
     ],
   },
+  {
+    path: "/array/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/array/Array.vue"),
+      },
+    ],
+  },
+  {
+    path: "/provier/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/provider/GrandfatherView.vue"),
+      },
+    ],
+  },
 ];
 
 // 路由实例
