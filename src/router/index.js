@@ -20,7 +20,7 @@ export const routes = [
           console.log(from.path);
 
           return true;
-        }
+        },
       },
     ],
   },
@@ -273,7 +273,7 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: '',
+        path: "",
         // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
         // 又叫路由懒加载
         component: () => import("@/views/router-demo/Page3.vue"),
@@ -285,7 +285,7 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: '',
+        path: "",
         // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
         // 又叫路由懒加载
         component: () => import("@/views/router-guard/index.vue"),
@@ -302,26 +302,23 @@ const router = createRouter({
 
 // 前置路由守卫，常用于权限判断
 router.beforeEach((to, from) => {
-
   // to.path是目标地址
   console.log(to.path);
   // from.path是起始地址
   console.log(from.path);
 
   // 返回false就是不跳转到该路由
-  if(to.path === "/router-demo/")
-    return false;
+  if (to.path === "/router-demo/") return false;
 
-  // 如果目标是watch，则重定向到/ 
-  if(to.path === "/watch/")
-    return {path: "/"} // 和router.push一样的用法
-  
+  // 如果目标是watch，则重定向到/
+  if (to.path === "/watch/") return { path: "/" }; // 和router.push一样的用法
+
   return true;
 });
 
 // 后置路由守卫，用处不大，常用于进度条
 router.afterEach((to, from) => {
-  console.log("afterEach")
+  console.log("afterEach");
   console.log(to);
   console.log(from);
 });
