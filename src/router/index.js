@@ -14,13 +14,13 @@ export const routes = [
         // 又叫路由懒加载
         component: () => import("@/views/home/HomeView.vue"),
         // 独享路由
-        beforeEnter: (to, from) => {
-          console.log("onEnterEach");
-          console.log(to.path);
-          console.log(from.path);
+        // beforeEnter: (to, from) => {
+        //   console.log("onEnterEach");
+        //   console.log(to.path);
+        //   console.log(from.path);
 
-          return true;
-        },
+        //   return true;
+        // },
       },
     ],
   },
@@ -292,6 +292,18 @@ export const routes = [
       },
     ],
   },
+  {
+    path: "/pinia/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/pinia/index.vue"),
+      },
+    ],
+  },
 ];
 
 // 路由实例
@@ -300,27 +312,27 @@ const router = createRouter({
   history: createWebHistory(),
 });
 
-// 前置路由守卫，常用于权限判断
-router.beforeEach((to, from) => {
-  // to.path是目标地址
-  console.log(to.path);
-  // from.path是起始地址
-  console.log(from.path);
+// // 前置路由守卫，常用于权限判断
+// router.beforeEach((to, from) => {
+//   // to.path是目标地址
+//   console.log(to.path);
+//   // from.path是起始地址
+//   console.log(from.path);
 
-  // 返回false就是不跳转到该路由
-  if (to.path === "/router-demo/") return false;
+//   // 返回false就是不跳转到该路由
+//   if (to.path === "/router-demo/") return false;
 
-  // 如果目标是watch，则重定向到/
-  if (to.path === "/watch/") return { path: "/" }; // 和router.push一样的用法
+//   // 如果目标是watch，则重定向到/
+//   if (to.path === "/watch/") return { path: "/" }; // 和router.push一样的用法
 
-  return true;
-});
+//   return true;
+// });
 
-// 后置路由守卫，用处不大，常用于进度条
-router.afterEach((to, from) => {
-  console.log("afterEach");
-  console.log(to);
-  console.log(from);
-});
+// // 后置路由守卫，用处不大，常用于进度条
+// router.afterEach((to, from) => {
+//   console.log("afterEach");
+//   console.log(to);
+//   console.log(from);
+// });
 
 export default router;
