@@ -30,10 +30,16 @@ import { routes } from '@/router/index';
 }
 
 .nav {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     width: 10%;
-    background-color: orange;
+    background-color: lightblue;
+}
+
+// 隐藏滚动条
+.nav::-webkit-scrollbar {
+    width: 0;
 }
 
 .content {
@@ -51,7 +57,7 @@ import { routes } from '@/router/index';
 
 // 这个样式vue3会给我们自动加上
 .router-link-active {
-    background-color: lightblue;
+    background-color: yellow;
 }
 
 </style>
