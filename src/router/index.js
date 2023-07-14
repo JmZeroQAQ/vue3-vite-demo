@@ -208,6 +208,18 @@ export const routes = [
       },
     ],
   },
+  {
+    path: "/recursion/",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        // 动态导入组件,只有当导入这个地址的时候才会导入这个组件
+        // 又叫路由懒加载
+        component: () => import("@/views/recursion/RecursionView.vue"),
+      },
+    ],
+  },
 ];
 
 // 路由实例
